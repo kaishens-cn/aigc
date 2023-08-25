@@ -3,9 +3,6 @@ project(ncnn_gfpgan)
 set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pie -fPIE -fPIC -Wall -O3")
 
-find_package(protobuf REQUIRED)
-#target_link_libraries(main PRIVATE protobuf::libprotoc protobuf::libprotobuf protobuf::libprotobuf-lite)
-
 find_package(OpenCV REQUIRED)
 if (OpenCV_FOUND)
     message(STATUS "OpenCV_LIBS: ${OpenCV_LIBS}")
