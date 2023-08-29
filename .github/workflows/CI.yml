@@ -30,7 +30,7 @@ jobs:
           cp -r ./install ../../ncnn
           cd ../../
           mkdir build
-          cd build && cmake .. && make
+          cd build && cmake -DBUILD_SHARED_LIBS=OFF .. && make
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
