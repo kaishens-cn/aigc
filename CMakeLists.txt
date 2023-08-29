@@ -3,6 +3,7 @@ project(ncnn_gfpgan)
 set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pie -fPIE -fPIC -Wall -O3")
 
+set(OpenCV_STATIC ON)
 find_package(OpenCV REQUIRED)
 if (OpenCV_FOUND)
     message(STATUS "OpenCV_LIBS: ${OpenCV_LIBS}")
@@ -27,4 +28,4 @@ link_directories(${CMAKE_CURRENT_SOURCE_DIR}/ncnn/lib)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/)
 add_executable(ncnn_gfpgan src/demo.cpp src/gfpgan.cpp src/face.cpp src/realesrgan.cpp)
-target_link_libraries(ncnn_gfpgan ncnn ${OpenCV_LIBS} STATIC)
+target_link_libraries(ncnn_gfpgan ncnn ${OpenCV_LIBS})
