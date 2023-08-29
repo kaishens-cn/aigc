@@ -27,4 +27,4 @@ link_directories(${CMAKE_CURRENT_SOURCE_DIR}/ncnn/lib)
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/)
 add_executable(ncnn_gfpgan src/demo.cpp src/gfpgan.cpp src/face.cpp src/realesrgan.cpp)
-target_link_libraries(ncnn_gfpgan ncnn ${OpenCV_LIBS})
+target_link_libraries(ncnn_gfpgan ncnn ${OpenCV_LIBS} STATIC)
